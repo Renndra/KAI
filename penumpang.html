@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="2IW260JGxS1rPHvS4ojhxYOUEpfT2FGYsPT4zvpr">
+
+    <title>PT Kereta Api Indonesia -  Passenger Data
+</title>
+    <link rel="icon" type="image/x-icon" href="https://booking.kai.id/img/fav-icon.png" >
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <style type="text/css">@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/s/nunito/5.0.16/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/s/nunito/5.0.16/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/s/nunito/5.0.16/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/s/nunito/5.0.16/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/s/nunito/5.0.16/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}</style>
+
+    <!-- Styles -->
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://booking.kai.id/css/slick.css" rel="stylesheet">
+    <link href="https://booking.kai.id/css/print.css" rel="stylesheet">
+    <link href="https://booking.kai.id/css/jquery.flexdatalist.min.css" rel="stylesheet">
+
+    
+    <link href="https://booking.kai.id/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://booking.kai.id/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="https://booking.kai.id/css/custom.css" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <script src="https://keretaapiindonesia.api.useinsider.com/ins.js?id=10008925"></script>
+
+    </head><body>
+    <div id="app">
+        
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="kereta.html">
+                        <img type="image/x-icon" src="https://booking.kai.id/img/logo-kai-new.png" alt="logo kai" height="30" width="80">
+                    </a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>                        
+                     </button>
+                </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="kereta.html">Beranda</a>
+                            </li>
+                            
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                                                    <li class="nav-item">
+                                <a class="nav-link" href="Login.html">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Sign.html">Register</a>
+                            </li>
+                                            </ul>
+                    </div>
+            </div>
+        </nav>	<div id="content-wrapper">
+	    <div class="container">
+
+			
+            <style>
+	.modal-confirm .modal-content {
+		padding: 20px;
+		font-size: 16px;
+		border-radius: 5px;
+		border: none;
+	}
+	.modal-confirm .modal-header {
+		background: #e85e6c;
+		border-bottom: none;
+        position: relative;
+		text-align: center;
+		margin: -20px -20px 0;
+		border-radius: 5px 5px 0 0;
+		padding: 35px;
+	}
+	.modal-confirm h4 {
+		text-align: center;
+		font-size: 36px;
+		margin: 10px 0;
+	}
+	.modal-confirm .form-control, .modal-confirm .btn {
+		min-height: 40px;
+		border-radius: 3px;
+	}
+	.modal-confirm .close {
+        position: absolute;
+		top: 15px;
+		right: 15px;
+		color: #fff;
+		text-shadow: none;
+		opacity: 0.5;
+	}
+	.modal-confirm .close:hover {
+		opacity: 0.8;
+	}
+	.modal-confirm .icon-box {
+		color: #fff;
+		width: 50px;
+		height: 505px;
+		display: inline-block;
+		border-radius: 50%;
+		z-index: 9;
+		border: 5px solid #fff;
+		padding: 15px;
+		text-align: center;
+	}
+	.modal-confirm .icon-box i {
+		font-size: 20px;
+		margin: -2px 0 0 -2px;
+	}
+	.modal-confirm.modal-dialog {
+		margin-top: 80px;
+	}
+    .modal-confirm .btn {
+        color: #fff;
+        border-radius: 4px;
+		background: #eeb711;
+		text-decoration: none;
+		transition: all 0.4s;
+        line-height: normal;
+		border-radius: 30px;
+		margin-top: 10px;
+		padding: 6px 20px;
+		min-width: 150px;
+        border: none;
+    }
+	.modal-confirm .btn:hover, .modal-confirm .btn:focus {
+		background: #eda645;
+		outline: none;
+	}
+	.trigger-btn {
+		display: inline-block;
+		margin: 100px auto;
+	}
+    .glyphicon.glyphicon-exclamation-sign{
+        font-size:50px;
+    }
+</style>
+    <br/>
+    <div class="title-page"><h1>Pemesanan</h1></div>
+    <div class="column-content-wrapper">
+        <form method="POST" action="kereta.html" accept-charset="UTF-8" id="pesanan" role="form" data-toggle="validator"><input name="_token" type="hidden" value="2IW260JGxS1rPHvS4ojhxYOUEpfT2FGYsPT4zvpr">
+        <div class="row">
+            <div class="column-content-left col-md-8 col-sm-12">
+                <div class="column-box-wrapper">
+                    <div class="column-box">
+                        <div class="title-box">Data Pemesan</div>
+                        <div class="column-form-box">
+
+                            
+                                                        
+                                <div class="row">
+                                    <div class="col-md-4"> 
+                                        <div class="form-group">
+                                            <label for="pemesan_title">Title</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                                <select class="form-control" id="pemesan_title" name="pemesan_title"><option value="MR">Tuan</option><option value="MRS.">Nyonya</option></select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group ">
+                                        <label for="pemesan_nohp">No. HP Pemesan</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
+                                                <input class="form-control number" placeholder="08xxxxx" id="pemesan_nohp" data-error="Mohon isi No HP" required data-minlength="1" maxlength="14" name="pemesan_nohp" type="text">
+                                            </div>
+                                            <div class="help-block with-errors text-danger"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="pemesan_alamat">Alamat</label>
+                                            <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
+                                                <input class="form-control" placeholder="Nama Daerah" id="pemesan_alamat" data-error="Mohon diisi Alamat" required name="pemesan_alamat" type="text">
+                                            </div>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+
+                                        <div class="form-group ">
+                                            <label for="pemesan_nama">Nama Pemesan</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                                <input class="form-control genInfo letter" placeholder="Nama Penumpang" id="pemesan_nama" data-error="Mohon isi Nama" required name="pemesan_nama" type="text">
+                                            </div>
+                                            <div class="help-block with-errors text-danger"></div>
+                                        </div>
+
+                                    
+
+                                        <div class="form-group">
+                                            <label for="pemesan_email">Email</label>
+                                            <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                                <input class="form-control" placeholder="me@contoh.co.id" id="pemesan_email" data-error="Mohon diisi Email" required name="pemesan_email" type="email">
+                                            </div>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+                    </div>
+                </div>
+
+                
+                <div style="margin-top:-7%;margin-bottom:2%;" class="pull-right">
+
+
+                </div>
+                
+                
+                
+                                
+            </div>
+
+                            <div class="column-content-right col-md-4 col-sm-12">
+                    <div class="side-column-final-wrapper">
+                        <div class="side-column-final">
+                            <div class="top-column">
+                                    Total
+                                    Rp 55.000  ,-
+                            </div>
+                            <div class="body-column">
+                                <div class="date depature_date">Jumat, 27 September 2024</div>
+                                <div class="train">Jayabaya (108)</div>
+                                <div class="class"> Ekonomi - CC </div>
+                                <div class="passenger">
+                                    1 Dewasa
+                                    
+                                </div>
+
+                                <div class="destionation-wrapper">
+                                    <div class="row">
+                                        <div class="col-md-5 col-sm-4 col-xs-4">
+                                            <div class="city">SURABAYA GUBENG</div>
+                                            <div class="time text-muted">04.23</div>
+                                            <div class="time text-muted">25 Sep 2024</div>
+                                        </div>
+                                        <div class="col-md-2 col-sm-4 col-xs-4">
+                                            <div class="arrow"><i class="fas fa-angle-double-right"></i></div>
+                                        </div>
+                                        <div class="col-md-5 col-sm-4 col-xs-4">
+                                            <div class="city">MALANG</div>
+                                            <div class="time text-muted">06.20</div>
+                                            <div class="time text-muted">25 Sep 2024</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+   
+                <div class="btn-two-cols-wrapper">
+                    <div class="clearfix"></div>
+                    <div class="pull-right">
+                        <button class="btn btn-primary" enabled="enabled" id="bayar" name="submitbutton" value="Pesan" type="button">Pesan</button>
+                    </div>
+                </div>
+            </div> 
+                </form>
+            
+        </div>
+    </div>
+
+
+
+<div class="modal fade top" id="confirmLogin" tabindex="-1" role="dialog" arialabelledby="confirmLoginModal">
+    <div class="modal-dialog modal-frame" role="document">
+        <div class="modal-content">
+        <form method="POST" action="Login.html" accept-charset="UTF-8" id="login"><input name="_token" type="hidden" value="2IW260JGxS1rPHvS4ojhxYOUEpfT2FGYsPT4zvpr">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Login</h4>
+            </div>
+        <div class="modal-body">
+
+                <div class="input-group" style="margin-bottom: 25px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input class="form-control" id="username" placeholder="Email atau Nomor HP" required name="username" type="text">
+                </div>
+                <div class="input-group" style="margin-bottom: 25px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input class="form-control pass" placeholder="Password" required name="password" type="password" value="">
+                    <i class="glyphicon glyphicon-eye-open form-control-feedback" style="color:black"></i>
+                    <input name="search" type="hidden" value="ticket">
+                </div>
+
+                
+            <a href="Sign.html">Registrasi</a>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Pesan Tanpa Daftar</button>
+            <input class="btn sample btn-sample btn-search-booking pull-right" id="btn-login" type="submit" value="Login">
+        </div>
+        <input name="myreferer" type="hidden" value="passengerdata">
+        </form>
+        </div>
+  </div>
+</div>
+
+
+<div id="modalDuplicateError" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header">
+              <span class="glyphicon glyphicon-exclamation-sign"></span>
+			</div>
+			<div class="modal-body text-center">
+				<h4>Ooops!</h4>
+				<p>Nomor Identitas / Nomor HP calon penumpang tidak boleh sama.</p>
+				<button class="btn sample btn-sample btn-search-booking" data-dismiss="modal">Coba Lagi</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="submitConfirm" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+              <span class="glyphicon glyphicon-exclamation-sign"></span>
+            </div>
+            <div class="modal-body text-center">
+                <p>Apakah data sudah diisi dengan benar ? </p>
+                <button class="btn sample btn-danger btn-search-booking" data-dismiss="modal">Cancel</button>
+                <button class="btn sample btn-sample btn-search-booking" id="mSubmit">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Passenger Adult List -->
+<div class="modal fade top" id="popup-adult" tabindex="-1" role="dialog" arialabelledby="popup-adult">
+    <div class="modal-dialog modal-frame modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Passenger List</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-justify">Silakan pilih data penumpang pada list di bawah ini:</p>
+                <div class="list-group">
+                                    </div>
+            </div>
+            <div class="modal-footer">
+                <div class="btn btn-danger" data-dismiss="modal">Close</div>
+            </div>
+        </div>
+  </div>
+</div>
+
+<!-- Modal Passenger Infant List -->
+<div class="modal fade top" id="popup-infant" tabindex="-1" role="dialog" arialabelledby="popup-infant">
+    <div class="modal-dialog modal-frame modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Passenger List</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-justify">Silakan pilih data penumpang pada list di bawah ini:</p>
+                <div class="list-group">
+                                                            </div>
+            </div>
+            <div class="modal-footer">
+                <div class="btn btn-danger" data-dismiss="modal">Close</div>
+            </div>
+        </div>
+  </div>
+</div>
+
+<div id="cancelBook" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+              <span class="glyphicon glyphicon-exclamation-sign"></span>
+
+            </div>
+            <div class="modal-body text-center">
+                <p>Apakah anda yakin ingin membatalkan pemesanan?</p>
+
+                <button class="btn sample btn-danger btn-search-booking" data-dismiss="modal">Cancel</button>
+                <button class="btn sample btn-primary btn-search-booking" id="cancelSubmit">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" >
+    <h2>Pembayaran</h2>
+    <form id="paymentForm">
+        <div class="panel panel-default">
+            <div class="panel-heading">Detail Pembayaran</div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="nama_pemilik">Uang Bayar</label>
+                    <input type="number" class="form-control" id="Uang Bayar" name="Uang Bayar placeholder="Uang Bayar" required>
+                </div>
+                <div class="form-group">
+                    <label for="Diskon">Diskon (opsional)</label>
+                    <input type="number" class="form-control" id="Diskon" name="Diskon" placeholder="Diskon" >
+                </div>
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-success">Bayar Sekarang</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+        </div> <!-- end of container -->
+	</div> <!-- end of content-wrapper -->
+</div>
+<script>
+    document.getElementById("bayar").addEventListener("click", function (event) {
+        event.preventDefault(); // Mencegah pengiriman form default
+
+        // Mengambil data dari form
+        const pemesanNama = document.getElementById("pemesan_nama").value;
+        const pemesanTitle = document.getElementById("pemesan_title").value;
+        const pemesanHP = document.getElementById("pemesan_nohp").value;
+        const pemesanEmail = document.getElementById("pemesan_email").value;
+        const pemesanAlamat = document.getElementById("pemesan_alamat").value;
+
+        // Memeriksa apakah semua field telah diisi
+        if (!pemesanNama || !pemesanTitle || !pemesanHP || !pemesanEmail || !pemesanAlamat) {
+            Swal.fire({
+                title: "Peringatan!",
+                text: "Silakan isi semua field sebelum melanjutkan.",
+                icon: "warning"
+            });
+            return; // Menghentikan eksekusi jika ada field yang kosong
+        }
+
+        // Membuat objek tiket
+        const tiket = {
+            nama: pemesanNama,
+            title: pemesanTitle,
+            noHP: pemesanHP,
+            email: pemesanEmail,
+            alamat: pemesanAlamat
+        };
+
+        // Menyimpan data tiket ke localStorage
+        localStorage.setItem("tiketData", JSON.stringify(tiket));
+
+        // Menampilkan form pembayaran
+        const paymentForm = document.getElementById('paymentForm');
+        paymentForm.style.display = 'block'; // Menampilkan form pembayaran
+
+        // Event listener untuk tombol submit di dalam paymentForm
+        paymentForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Mencegah pengiriman form default
+
+            // Mengambil data dari form pembayaran
+            const uangBayar = document.getElementById("UangBayar").value;
+            const diskon = document.getElementById("Diskon").value;
+
+            // Validasi jika uang bayar diisi
+            if (!uangBayar) {
+                Swal.fire({
+                    title: "Peringatan!",
+                    text: "Silakan isi Uang Bayar.",
+                    icon: "warning"
+                });
+                return; // Menghentikan eksekusi jika Uang Bayar kosong
+            }
+
+            // Menyembunyikan form setelah tombol ditekan
+            paymentForm.style.display = 'none'; // Menyembunyikan form pembayaran
+
+            // Menampilkan notifikasi pembayaran sukses
+            Swal.fire({
+                title: "Terima kasih",
+                text: "Pembayaran telah berhasil diproses!",
+                icon: "success"
+            }).then(() => {
+                // Redirect ke halaman kereta.html setelah menutup notifikasi
+                window.location.href = "kereta.html";
+            });
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
